@@ -29,9 +29,7 @@ def check_rdp_connection(target, domain, username, password, debug=False):
             print(colored(f"stderr:\n{result.stderr.decode()}", 'yellow'))
 
         
-        if "exit status 0" in result.stdout.decode() or \
-           "Authentication only, exit status 0" in result.stdout.decode() or \
-           "freerdp_abort_connect:freerdp_set_last_error_ex ERRCONNECT_CONNECT_CANCELLED [0x0002000B]" in result.stderr.decode():
+        if "freerdp_abort_connect:freerdp_set_last_error_ex ERRCONNECT_CONNECT_CANCELLED [0x0002000B]" in result.stderr.decode():
             print(colored(f'[RDP allowed] {target}: Successful authentication for user {username}', 'green'))
             return True
         else:
