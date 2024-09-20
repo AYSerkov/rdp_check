@@ -67,7 +67,7 @@ def main():
             with open(args.targets, 'r') as f:
                 for line in f:
                     line = line.strip()
-                    if '/' in line:  # Если это подсеть
+                    if '/' in line:  
                         network = ipaddress.ip_network(line, strict=False)
                         targets.extend(str(ip) for ip in network.hosts())
                     else:
@@ -83,7 +83,7 @@ def main():
         logging.info(f"Checking RDP for {target}...")
         success = check_rdp_connection(
             target, args.domain, args.username, args.password, args.debug)
-        time.sleep(1)  # Добавляем паузу между проверками
+        time.sleep(1)
 
 if __name__ == "__main__":
     main()
