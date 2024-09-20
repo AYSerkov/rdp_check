@@ -16,6 +16,7 @@ pip install termcolor
 
 **Usage**
 - Checking a Single Target
+
 You can check a single host (IP address or DNS name) using the --target option:
 
 ```bash
@@ -23,6 +24,7 @@ python rdp_checker.py -t <host> -u <username> -p <password> -d <domain>
 ```
 
 - Batch Checking from a File
+
 To check multiple hosts, subnets, or DNS names, you can create a file with a list of targets and pass it with the --targets option:
 ```
 ts.domain.local
